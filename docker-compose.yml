@@ -1,0 +1,16 @@
+
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    depends_on:
+      - mongo-seed
+
+  mongo-seed:
+    image: mongo:latest
+    volumes:
+      - /Users/danielsp_45/Uni/EW/ENGWEB2024-Recurso/dataset.json:/datasets/dataset.json
+    command: mongoimport --host mongodb -d livros -c livros --type json --file /datasets/dataset.json --jsonArray
