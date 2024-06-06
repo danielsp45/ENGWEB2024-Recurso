@@ -2,7 +2,7 @@ var axios = require("axios");
 var express = require("express");
 var router = express.Router();
 
-var endpoint = "http://localhost:17000/books";
+var endpoint = "http://backend:17000/books";
 
 /* GET livros page */
 router.get("/", function(req, res, next) {

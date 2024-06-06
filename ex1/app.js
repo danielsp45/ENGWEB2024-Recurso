@@ -7,7 +7,7 @@ var indexRouter = require('./routes/index');
 var livrosRouter = require('./routes/livros');
 
 var mongoose = require("mongoose");
-var mongoDB = "mongodb://127.0.0.1/livros";
+var mongoDB = "mongodb://mongodb/livros";
 mongoose.connect(mongoDB);
 var db = mongoose.connection;
 db.on("error", console.error.bind(console, "Erro de conexão ao MongoDB"));
