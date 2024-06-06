@@ -12,5 +12,5 @@ services:
   mongo-seed:
     image: mongo:latest
     volumes:
-      - /Users/danielsp_45/Uni/EW/ENGWEB2024-Recurso/dataset.json:/datasets/dataset.json
+      - ./dataset.json:/datasets/dataset.json
     command: mongoimport --host mongodb -d livros -c livros --type json --file /datasets/dataset.json --jsonArray
