@@ -12,7 +12,7 @@ router.get("/", function(req, res, next) {
 });
 
 router.get('/authors/:idAutor', function (req, res) {
-  axios.get(endpoint + "/books").then((response) => {
+  axios.get(endpoint).then((response) => {
     let author = req.params.idAutor;
     let livros = response.data;
     let livrosAutor = livros.filter(livro => livro.author && livro.author.includes(author));
